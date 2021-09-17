@@ -28,7 +28,7 @@ namespace WebAgroCoreBCC2021.Models.Dominio
         public int idade { get; set; }
 
 
-        [StringLength(11)]
+        [StringLength(14)]
         public string cpf { get; set; }
 
 
@@ -46,8 +46,8 @@ namespace WebAgroCoreBCC2021.Models.Dominio
 
         [Display(Name = "E-Mail")]
         [StringLength(35, ErrorMessage = "E-Mail Maior que 35 Caracteres")]
-        //[DataType(DataType.EmailAddress, ErrorMessage = "E-Mail Inválido")]
-        [RegularExpression("^[a-zA-Z0-9_+-] +[a-zA-Z0-9._+-]*[a-zA-Z0-9_+-] +@[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[.]{1,1}[a-zA-Z]{2,}$", ErrorMessage = "E-Mail Inválido")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-Mail Inválido")]
+        //[RegularExpression("^[a-zA-Z0-9_+-] +[a-zA-Z0-9._+-]*[a-zA-Z0-9_+-] +@[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[.]{1,1}[a-zA-Z]{2,}$", ErrorMessage = "E-Mail Inválido")]
         public string email { get; set; }
 
 

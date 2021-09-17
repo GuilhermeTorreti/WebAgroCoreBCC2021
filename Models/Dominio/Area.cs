@@ -17,6 +17,7 @@ namespace WebAgroCoreBCC2021.Models.Dominio
 
         [Display(Name = "Produtor Rural")]
         public Agricultor produtor { get; set; }
+        public int produtorId { get; set; }
 
 
         [Display(Name = "Hectares")]
@@ -28,5 +29,7 @@ namespace WebAgroCoreBCC2021.Models.Dominio
         public string municipio { get; set; }
         public string bairro { get; set; }
         public int gps { get; set; }
+
+        public ICollection<InsumoArea> insumosarea { get; set; }
     }
 }
