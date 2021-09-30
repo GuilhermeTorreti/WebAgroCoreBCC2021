@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,7 +29,9 @@ namespace WebAgroCoreBCC2021.Models.Dominio
         public int idade { get; set; }
 
 
-        [StringLength(14)]
+        [Display(Name = "CPF")]
+        [StringLength(14, ErrorMessage = "Não aceita CPF com mais de 14 dígitos")]
+        [Remote("ValidarCPF", "Agricultores", ErrorMessage = "CPF Inválido")]
         public string cpf { get; set; }
 
 

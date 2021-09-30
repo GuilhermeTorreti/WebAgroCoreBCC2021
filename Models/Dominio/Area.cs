@@ -25,11 +25,21 @@ namespace WebAgroCoreBCC2021.Models.Dominio
         public float hectares { get; set; }
 
 
-
-        public string municipio { get; set; }
+        [StringLength(25, ErrorMessage = "Tamanho de nome do bairro inválido - 25")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Display(Name = "Bairro")]
         public string bairro { get; set; }
+
+
+        [StringLength(25, ErrorMessage = "Tamanho do nome do município inválido - 25")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
+        [Display(Name = "Município")]
+        public string municipio { get; set; }
+
+
+        [Display (Name = "GPS")]
         public int gps { get; set; }
 
-        public ICollection<InsumoArea> insumosarea { get; set; }
+        public ICollection<InsumoArea> insumos { get; set; }
     }
 }
